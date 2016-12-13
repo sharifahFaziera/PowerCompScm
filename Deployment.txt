@@ -1,0 +1,61 @@
+Chapter 6 Deployment
+
+Chapter Overview
+
+6.1 Why Is Deployment Important? 87
+6.2 Where Do I Start? 87
+6.3 Practices and Examples 87
+6.4 Conducting a Confi guration Audit 91
+6.5 Don’t Forget the Smoke Test 92
+6.6 Little Things Matter a Lot 92
+6.7 Communications Planning 92
+6.8 Deployment Should Be Delegated 93
+6.9 Trust But Verify 93
+6.10 Improving the Deployment Process 93
+
+Deployment is the final step in the code promotion process. Deployment involves
+taking the packaged release and promoting it into the target environment,
+which is likely production or perhaps QA. Deployment is also responsible for
+rolling back a promotion if something goes wrong. If you can seamlessly deploy
+and roll back if necessary, you will be able to significantly reduce a common
+source of risk (and potential outages). Deployment is usually performed by the
+operations team, which often has a lot of other responsibilities that need to be
+fulfi lled. I like to see deployment be the simplest step in the release process.
+This means that all the prior steps of the process must have been successfully
+completed. Deployment usually also means that control shifts from the release
+management team to the operations team, which is usually pretty busy with just
+maintaining the current production systems. The operations team is primarily
+concerned with keeping the systems running and responding to any events that
+occur. Therefore, deployment procedures should be kept as straightforward as
+possible. Your release management team needs to create solid deployment procedures
+that can be gracefully completed by the operations team. Chapter 14,
+“Industry Standards and Frameworks,” discusses the ITIL framework that is
+commonly used to establish IT service manage (ITSM). It is common for release
+management and deployment procedures to be required to be consistent with
+ITIL processes.
+In this chapter, we discuss common deployment practices, including staging,
+avoiding mistakes, establishing a release depot, and auditing a release that has
+been previously deployed. We discuss how to conduct a confi guration audit,
+smoke testing after the release has been deployed, confi guration changes that
+can impact your release, along with planning for effective communications such
+as announcing planned outages and completed deployments. We also discuss
+the fact that ideally deployments should be delegated to the operations team and
+deployment should always have its own process-improvement feedback process.
+
+Goals of Deployment
+The main goal of deployment is to promote a release into production without
+any possible problem occurring. Promoting a release should be like turning on a
+light switch. If there is a problem with the release, the operations team follows
+the deployment procedures to roll back the release so that business can continue
+while your tech support team figures out how to solve the problem. I believe that
+the capability to gracefully roll back a release is just as critical a goal as promoting
+a new release into production. Deployment also has another important
+goal, and that is to know exactly what is in production at all times and to know
+immediately whether any unauthorized changes have been made. My primary
+goal in setting up a deployment process is that all changes are tracked and that
+promoting a release or rolling back is easy, reliable, and predictable.
+
+Principles of Deployment
+The principles of deployment include the following:
+? Promoting a release (or backing it out) should be reliable and as simple as
+possible.
